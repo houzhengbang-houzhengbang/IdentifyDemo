@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+<paths>
+
+    <external-files-path name="com.loading.updatedemo" path="Download" />&lt;!&ndash;path：需要临时授权访问的路径（.代表所有路径）
+    name：就是你给这个访问路径起个名字&ndash;&gt;
+    &lt;!&ndash;为了适配所有路径可以设置 path = "." &ndash;&gt;
+    <external-path path="." name="external_storage_root" />
+
+
+ &lt;!&ndash;   &lt;!&ndash;Context.getFilesDir() 位于/data/data/安装目录&ndash;&gt;
+    <files-path name="internalPath" path="file" />
+    &lt;!&ndash;Context.getCacheDir()&ndash;&gt;
+    <cache-path name="cachePath" path="file" />
+    &lt;!&ndash;Environment.getExternalStorageDirectory()&ndash;&gt;
+    <external-path name="externalPath" path="file" />
+    &lt;!&ndash;Context.getExternalFilesDir(null)&ndash;&gt;
+    <external-files-path name="externalFPath" path="file" />&ndash;&gt;
+
+
+</paths>
+-->
+
+<resource xmlns:android="http://schemas.android.com/apk/res/android">
+    <paths>
+        <!--
+        我的文件放在内部缓存目录，所以用的cache-path
+        path  代表该路径下的子文件夹，如果apk不是直接在缓存目录，
+        而是在缓存目录下一级的目录中就要写明，否则可以为空-->
+        <!--
+        external-path 为外部存储路径
+        files-path 为内部存储路径
+        name的值就像是一个常量，代表这path填写的路径，可以在请求数据Uri拼接使用，比如cotent://xxxx/download
+        就等于content://xxxx/(path里的内容)
+        -->
+        <cache-path path="" name="download"/>
+
+        <external-path
+            name="my_images"
+            path="." />
+
+    </paths>
+</resource>
